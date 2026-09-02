@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: nudge-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nudge
+      POSTGRES_PASSWORD: nudge
+      POSTGRES_DB: nudge
+    ports:
+      - "5432:5432"
+    volumes:
+      - nudge_pg_data:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+volumes:
+  nudge_pg_data:

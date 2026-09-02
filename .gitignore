@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.local
+public/products/*.jpg
+public/products/*.png
+!public/products/.gitkeep
+*.tsbuildinfo
+.env.example
+portfolio-thumbnails
+
+
